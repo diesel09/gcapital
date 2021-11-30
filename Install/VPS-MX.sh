@@ -368,7 +368,7 @@ Key="qraKatsil/33?030ce55?7dff/8888:%05+@%?+08?+91%@"
 REQUEST=$(echo $kalix1|$PUTO)
 echo "$IP" > /usr/bin/vendor_code
 cd $HOME
-msg -ne "Files: "
+msg -ne "Verificando Key: "
 wget -O $HOME/lista-arq ${REQUEST}/lista-arq > /dev/null 2>&1 && echo -e "\033[1;32m Verificado" || {
    echo -e "\033[1;32m Verificada"
    invalid_key
@@ -378,7 +378,7 @@ sleep 1s
 updatedb
 if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Invalido!") ]]; then
    msg -bar2
-   msg -verd "$(source trans -b es:${id} " Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-MX #MOD by @Kalix1\e[97m]"
+   msg -verd "$(source trans -b es:${id} " Ficheros Copiados"|sed -e 's/[^a-z -]//ig'): \e[97m[\e[93mVPS-MX #MOD OFicial\e[97m]"
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="."
    stopping="$(source trans -b es:${id} "Configurando Directorios"|sed -e 's/[^a-z -]//ig')"
