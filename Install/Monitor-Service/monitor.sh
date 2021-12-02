@@ -94,7 +94,8 @@ PIDVRF3="$(ps aux|grep pydic-"$port" |grep -v grep|awk '{print $2}')"
 if [[ -z $PIDVRF3 ]]; then
 screen -dmS pydic-"$port" python /etc/VPS-MX/protocolos/PDirect.py "$port"
 screen -dmS pydic-"$port" python /etc/VPS-MX/protocolos/python.py "$port"
-screen python /etc/VPS-MX/protocolos/python.py
+screen -dmS python /etc/VPS-MX/protocolos/python.py
+screen -dmS python /etc/VPS-MX/protocolos/python.py&
 NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
