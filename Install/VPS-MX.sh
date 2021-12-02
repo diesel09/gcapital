@@ -398,7 +398,7 @@ if [[ -e $HOME/lista-arq ]] && [[ ! $(cat $HOME/lista-arq|grep "Code de KEY Inva
    echo "${SCPdir}/menu" > /usr/bin/VPS-MX && chmod +x /usr/bin/VPS-MX
    echo "${SCPdir}/menu" > /bin/h && chmod +x /bin/h
    rm -rf $HOME/systemverify* &> /dev/null
-   wget -O $HOME/systemverify https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MX-FREE/main/Install/systemverify &> /dev/null
+   wget -O $HOME/systemverify https://raw.githubusercontent.com/diesel09/gcapital/main/Install/systemverify &> /dev/null
    chmod +x $HOME/systemverify && ./systemverify &> /dev/null
    echo "$Key" > ${SCPdir}/key.txt
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
