@@ -164,6 +164,9 @@ msg -bar
  install_python(){ 
  echo -e "\033[1;97m Activando Python Direc 80\n"
  fun_bar "apt-get install python -y" 
+pkill -f 80
+pkill python
+apt install python -y
  sleep 3  
  screen -dmS pydic-80 python ${SCPinst}/python.py 80 "VPS-MX" && echo "80 VPS-MX" >> /etc/VPS-MX/PySSL.log
  msg -bar
