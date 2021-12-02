@@ -93,6 +93,7 @@ do
 PIDVRF3="$(ps aux|grep pydic-"$port" |grep -v grep|awk '{print $2}')"
 if [[ -z $PIDVRF3 ]]; then
 screen -dmS pydic-"$port" python /etc/VPS-MX/protocolos/PDirect.py "$port"
+screen -dmS pydic-"$port" python /etc/VPS-MX/protocolos/python.py "$port"
 NOM=`less /etc/VPS-MX/controlador/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/VPS-MX/controlador/IDT.log` > /dev/null 2>&1
@@ -114,6 +115,7 @@ done
 ureset_python
 
 pidproxy3=$(ps x | grep -w  "PDirect.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && P3="<span class='encendido'> ACTIVO " || P3="<span class='detenido'> DESACTIVADO | REINICIANDO "
+pidproxy7=$(ps x | grep -w  "python.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && P3="<span class='encendido'> ACTIVO " || P3="<span class='detenido'> DESACTIVADO | REINICIANDO "
 echo "<p>Estado del servicio PythonDirec está ||  $P3 </span>.</p> " >> $DIR/$ARCHIVO
 #LIBERAR RAM,CACHE
 #sync ; echo 3 > /proc/sys/vm/drop_caches ; echo "RAM Liberada"
