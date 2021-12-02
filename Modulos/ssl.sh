@@ -156,7 +156,7 @@ clear
 clear
 msg -bar
 msg -tit
-echo -e "\033[1;93m      SSL + PYDIREC  \033[1;94m By @AleSosaCreaciones "
+echo -e "\033[1;93m      SSL + PYDIREC  \033[1;94m Instalando... "
 msg -bar
 echo -e "\033[1;91m Deveras tener el Puerto 22 SSH y libre (80 y 443)"
 msg -bar
